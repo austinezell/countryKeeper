@@ -7,12 +7,6 @@ var jwt = require('express-jwt')
 
 var User = require('../models/user.js')
 
-
-// var auth = jwt({secret: process.env.SECRET, userProperty: 'payload'});
-// router.get('/', function(req, res, next) {
-//   res.send('respond with a resource');
-// });
-
 router.post('/register', function(req, res, next){
   if(!req.body.username || !req.body.password){
     return res.status(400).json({message: 'Please fill out all fields'});

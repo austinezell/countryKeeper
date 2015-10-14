@@ -5,7 +5,7 @@ var router = express.Router();
 var Auth = require('../config/auth.js')
 
 router.get('/', function(req, res, next) {
-  res.render('index', {title: 'TITLE'});
+  res.render('index', {title: 'CountryKeepr'});
 });
 
 router.get('/ping', Auth, function(req, res, next){

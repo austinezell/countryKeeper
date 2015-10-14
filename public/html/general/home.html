@@ -1,1 +1,27 @@
-<h1>Home</h1>
+<h1>Welcome to CountryKeepr</h1>
+<div class="panel">
+  <h2>Our Users are interested in the following countries:</h2>
+  <ul>
+    <li ng-repeat='country in countries'>
+      <h2>{{country.name}}</h2>
+      <p>About:</p>
+      <p ng-bind-html='country.about'></p>
+    </li>
+  </ul>
+  <table>
+    <thead>
+      <th>Country:</th>
+      <th>About:</th>
+      <th ng-if='loggedIn'>Wishlist</th>
+      <th ng-if='loggedIn'>Visited</th>
+    </thead>
+    <tbody>
+      <tr ng-repeat='country in countries'>
+        <td>{{country.name}}</td>
+        <td ng-bind-html='country.about'></td>
+        <td ng-if='loggedIn'></td>
+        <td ng-if='loggedIn'></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,11 @@
+td, th {
+  padding: 15px;
+}
+
+td {
+  border: solid grey 1px;
+}
+
+th {
+  border: solid black 3px;
+}

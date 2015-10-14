@@ -2,7 +2,7 @@
 
 var app = angular.module('passportTest');
 
-app.factory('auth', ['$http', '$window', "localStorageKey", '$rootScope', function($http, $window, localStorageKey, $rootScope){
+app.factory('Auth', function($http, $window, localStorageKey, $rootScope){
   var auth = {};
 
   auth.saveToken = function (token){
@@ -29,8 +29,7 @@ app.factory('auth', ['$http', '$window', "localStorageKey", '$rootScope', functi
     if(auth.isLoggedIn()){
       var token = auth.getToken();
       var payload = JSON.parse($window.atob(token.split('.')[1]));
-
-      return payload.username;
+      return {username: payload.username, userId: payload._id};
     }
   };
 
@@ -63,4 +62,4 @@ app.factory('auth', ['$http', '$window', "localStorageKey", '$rootScope', functi
 
   $rootScope.loggedIn = auth.isLoggedIn()
   return auth;
-}])
+})
